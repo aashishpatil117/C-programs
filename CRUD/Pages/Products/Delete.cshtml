@@ -1,0 +1,21 @@
+@page
+@model New_folder__6_.Pages.Products.Delete
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="mx-auto rounded border p-4" style="width:400px">
+
+    <h3>Delete customer @Request.Query["Id"]</h3>
+    <hr />
+    <form method="post">
+        <div class="row">
+            <div class="col-sm-6 d-grid">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+            <div class="col-sm-6 d-grid">
+                <a class="btn btn-danger" href="/Products/index">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

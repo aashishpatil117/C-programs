@@ -1,0 +1,57 @@
+@page
+@model New_folder__6_.Pages.Products.index
+@{
+    ViewData["Title"] = "index";
+}
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+ 
+        table,th,td {
+            border: 1px solid black;
+            margin: 0 auto;
+            height: 6vh;
+            width: 40vh;
+        }
+ 
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>@ViewData["Title"]</h1>
+<div>
+    <h1>List of Products</h1>
+    <a href="/Products/Create">New Product</a>
+    <table>
+        <thead >
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            @foreach(var p in Model.ProdList){
+                <tr >
+                    <td>@p.Id</td>
+                    <td>@p.Pname</td>
+                    <td>@p.price</td>
+                    <td style="white-space:nowrap">
+                        <a class="btn btn-primary btn-sm" href="/Products/Edit?id=@p.Id">Edit</a>
+                        <a class="btn btn-primary btn-sm" href="/Products/Delete?id=@p.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

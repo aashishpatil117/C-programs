@@ -1,0 +1,57 @@
+@page
+@model New_folder__6_.Pages.Products.Create
+@{
+    ViewData["Title"] = "Create";
+}
+
+<html>
+<head>
+    <style>
+        form{
+            border: none;
+            border-bottom: 2px solid red;
+        }
+        input{
+            border: none;
+            border-bottom: 2px solid red;
+            }
+        h2{
+            color:#3498db;
+        }
+    </style>
+
+</head>
+<body>
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div>
+    <h2 class="text-center mb-5">New Product</h2>
+    <form asp-action="submit" method="post" >
+        <div>
+            <label>Product Name</label>
+            <input asp-for="Pname" />
+            <span asp-validation-for="Pname"></span>
+        </div>
+        <div>
+            <label>Product Id</label>
+            <input asp-for="Id" />
+            <span asp-validation-for="Id"></span>
+        </div>
+        <div>
+            <label>Price</label>
+            <input asp-for="price"/>
+            <span asp-validation-for="price"></span>
+        </div>
+        <div class="row">
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-outline-primary" href="/Products/index" role="button">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+    
+</div>
+</body>
+</html>
