@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClient";
+
+package TextAnalysis;
+
+// The text analysis service definition.
+service TextAnalysis {
+  // Sends a greeting
+  rpc TextAnalyze (TextRequest) returns (word_count);
+}
+
+// The request message containing the tezt
+message TextRequest {
+  string name = 1;
+}
+
+// The response message containing the text analysis
+message word_count {
+  int32 wc = 1;
+  int32 cc = 2;
+  bool isP = 3;
+}
