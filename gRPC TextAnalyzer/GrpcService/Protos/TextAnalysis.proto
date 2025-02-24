@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+package TextAnalysis;
+
+// The greeting service definition.
+service TextAnalysis {
+  // Sends a greeting
+  rpc TextAnalyze (TextRequest) returns (word_count);
+}
+
+// The request message containing the user's name.
+message TextRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message word_count {
+  int32 wc = 1;
+  int32 cc = 2;
+  bool isP = 3;
+}
